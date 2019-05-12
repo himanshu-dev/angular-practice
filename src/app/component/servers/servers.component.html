@@ -1,0 +1,8 @@
+<div class="container">
+  <p appBetterHighlight elBgColorHighlight="green" [elBgColorDefault]="'red'">I am in servers component</p>
+  <app-add-server (onServerAdded)="addNewServer($event)"></app-add-server>
+  <app-server
+    *ngFor="let el of servers, let i = index"
+    [server]=el
+    (click)="deleteServer(i)"></app-server>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <hr>
+  <h2>This is number play component</h2>
+
+  <button class="btn btn-secondary" (click)="isOddsVisible = !isOddsVisible">
+    {{isOddsVisible ? 'show evens' : 'show odds'}}
+  </button>
+
+  <!--<div *ngIfNot="isOddsVisible">-->
+    <!--<p class="even" *ngFor="let number of evens">{{number}}</p>-->
+  <!--</div>-->
+
+  <!--<div *ngIfNot="!isOddsVisible">-->
+    <!--<p *ngFor="let number of odds" class="odd">{{number}}</p>-->
+  <!--</div>-->
+
+  <div [ngSwitch]="isOddsVisible">
+    <div *ngSwitchCase="false">
+      <p class="even" *ngFor="let number of evens">{{number}}</p>
+    </div>
+    <div *ngSwitchDefault>
+      <p class="even" *ngFor="let number of odds">{{number}}</p>
+    </div>
+  </div>
+</div>
