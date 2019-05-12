@@ -20,6 +20,9 @@ import {LoggingService} from '../../service/Logging.service';
     .online {
       color: white;
     }
+    .offline {
+      color: yellow;
+    }
   `],
   providers: [LoggingService]
 })

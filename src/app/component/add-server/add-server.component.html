@@ -2,16 +2,18 @@
        <!--type="text"-->
        <!--placeholder="server name"-->
        <!--(input)="onServerNameUpdated($event)">-->
-{{server.name}}
+
 <input class="form-control"
        type="text"
        placeholder="server name"
-       [(ngModel)]="server.name" #ServerNameInputElement>
-<button class="btn btn-primary" (click)="addNewServer()">add server</button>
-<p class="text-primary" *ngIf="serverAdded; else marker">
+       [(ngModel)]="server.name"
+       #ServerNameInputElement>
+<button class="btn btn-primary my-3" (click)="addNewServer()">add server</button>
+
+<p class="text-primary my-1" *ngIf="serverAdded; else marker">
   Server added with name {{server.name}}
 </p>
 
 <ng-template #marker>
-  <p class="text-secondary">No server added!</p>
+  <p class="text-secondary my-1">No server added!</p>
 </ng-template>

@@ -17,7 +17,7 @@ export class BetterHighlightDirective implements OnInit {
   ngOnInit(): void {
     this.bgColor = this.elBgColorDefault;
     // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
-    // this.renderer.setStyle(this.elRef  .nativeElement, 'color', 'white');
+    this.renderer.setStyle(this.elRef  .nativeElement, 'color', 'skyblue');
   }
 
   @HostListener('mouseenter') mouseenter(event: Event) {
@@ -31,7 +31,7 @@ export class BetterHighlightDirective implements OnInit {
     // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'unset');
     // this.bgColor = 'unset';
     this.bgColor = this.elBgColorDefault;
-    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'unset');
+    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'skyblue');
   }
 
 }

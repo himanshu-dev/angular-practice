@@ -1,4 +1,5 @@
-<p [ngStyle]="{'background-color': getColor()}"
-   [ngClass]="{online: server.status === 'online'}">
+<div class="alert"
+     [ngStyle]="{'background-color': getColor()}"
+     [ngClass]="{online: server.status === 'online', offline: server.status === 'offline'}">
   Server name : {{server.name}} | Status : {{server.status}}
-</p>
+</div>

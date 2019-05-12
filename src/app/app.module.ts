@@ -3,25 +3,25 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './component/root/app.component';
+import {RootComponent} from './component/root/root.component';
 import {ServerComponent} from './component/server/server.component';
 import {ServersComponent} from './component/servers/servers.component';
 import {AddServerComponent} from './component/add-server/add-server.component';
-import { BasicHighlightDirective } from './directive/basic-highlight.directive';
-import { BetterHighlightDirective } from './directive/better-highlight.directive';
-import { NgIfNotDirective } from './directive/ng-if-not.directive';
-import { NumberPlayComponent } from './component/number-play/number-play.component';
+import {BasicHighlightDirective} from './directive/basic-highlight.directive';
+import {BetterHighlightDirective} from './directive/better-highlight.directive';
+import {NgIfNotDirective} from './directive/ng-if-not.directive';
+import {NumberPlayComponent} from './component/number-play/number-play.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    RootComponent,
     ServerComponent,
     ServersComponent,
     AddServerComponent,
+    NumberPlayComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    NgIfNotDirective,
-    NumberPlayComponent
+    NgIfNotDirective
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,7 @@ import { NumberPlayComponent } from './component/number-play/number-play.compone
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [RootComponent]
 })
 export class AppModule {
 }

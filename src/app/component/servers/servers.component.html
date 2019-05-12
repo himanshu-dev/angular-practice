@@ -1,5 +1,9 @@
 <div class="container">
-  <p appBetterHighlight elBgColorHighlight="green" [elBgColorDefault]="'red'">I am in servers component</p>
+  <p class="alert" appBetterHighlight
+     elBgColorHighlight="green"
+     [elBgColorDefault]="'blue'">
+    This is servers component
+  </p>
   <app-add-server (onServerAdded)="addNewServer($event)"></app-add-server>
   <app-server
     *ngFor="let el of servers, let i = index"
