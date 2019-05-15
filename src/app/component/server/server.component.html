@@ -1,5 +1,13 @@
 <div class="alert"
      [ngStyle]="{'background-color': getColor()}"
      [ngClass]="{online: server.status === 'online', offline: server.status === 'offline'}">
-  Server name : {{server.name}} | Status : {{server.status}}
+  Server name : {{server.name}} | Status : {{server.status}} |
+  <a
+    [routerLink]="['/servers', 1, 'edit']"
+    [queryParams]="{allowEdit: 1}"
+    fragment="second">edit</a>
+  <a style="float: right;"
+     [routerLink]="['/server', 'another server', 'offline']">
+    another server
+  </a>
 </div>

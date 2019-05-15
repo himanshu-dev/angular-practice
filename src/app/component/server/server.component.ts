@@ -11,7 +11,10 @@ import {
   OnInit,
   SimpleChanges
 } from '@angular/core';
-import {LoggingService} from '../../service/Logging.service';
+import {LoggingService} from '../../service/logging.service';
+import {ActivatedRoute, Params} from '@angular/router';
+import * as _ from 'underscore';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-server',
@@ -20,11 +23,12 @@ import {LoggingService} from '../../service/Logging.service';
     .online {
       color: white;
     }
+
     .offline {
       color: yellow;
     }
   `],
-  providers: [LoggingService]
+  // providers: [LoggingService]
 })
 export class ServerComponent
   implements OnInit, DoCheck, OnChanges,
@@ -35,8 +39,10 @@ export class ServerComponent
     name: '',
     status: ''
   };
+  paramsSubscription: Subscription;
 
-  constructor(private logger: LoggingService) {
+  constructor(private logger: LoggingService,
+              private route: ActivatedRoute) {
   }
 
   getServerStatus() {
@@ -54,8 +60,22 @@ export class ServerComponent
   }
 
   ngOnInit(): void {
-    this.getServerStatus();
     this.logger.logInfo('server: init');
+    this.getServerStatus();
+
+    if (!_.isEmpty(this.route.snapshot.params)) {
+      // this.server.name = this.route.snapshot.params['name'];
+      // this.server.status = this.route.snapshot.params['status'];
+
+      this.paramsSubscription = this.route.params.subscribe((params) => {
+        this.updateServer(params);
+      });
+    }
+  }
+
+  updateServer(params: Params) {
+    this.server.name = params.name;
+    this.server.status = params.status;
   }
 
   ngDoCheck() {
@@ -80,5 +100,6 @@ export class ServerComponent
 
   ngOnDestroy(): void {
     this.logger.logInfo('server: destroyed');
+    // this.paramsSubscription.unsubscribe();
   }
 }

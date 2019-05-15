@@ -11,6 +11,16 @@ import {BasicHighlightDirective} from './directive/basic-highlight.directive';
 import {BetterHighlightDirective} from './directive/better-highlight.directive';
 import {NgIfNotDirective} from './directive/ng-if-not.directive';
 import {NumberPlayComponent} from './component/number-play/number-play.component';
+import {LoggingService} from './service/logging.service';
+import {CommonService} from './service/common.service';
+import {EditServerComponent} from './component/edit-server/edit-server.component';
+import {NotFoundComponent} from './component/not-found/not-found.component';
+import {AuthService} from './service/auth.service';
+import {AuthGuard} from './service/auth.guard';
+import {MyFormComponent} from './component/my-form/my-form.component';
+import {TodoComponent} from './component/todo/todo.component';
+import { PipePipe } from './pipe.pipe';
+import { ShortenPipe } from './pipe/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -21,14 +31,20 @@ import {NumberPlayComponent} from './component/number-play/number-play.component
     NumberPlayComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    NgIfNotDirective
+    NgIfNotDirective,
+    EditServerComponent,
+    NotFoundComponent,
+    TodoComponent,
+    MyFormComponent,
+    PipePipe,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggingService, CommonService, AuthService, AuthGuard],
   bootstrap: [RootComponent]
 })
 export class AppModule {

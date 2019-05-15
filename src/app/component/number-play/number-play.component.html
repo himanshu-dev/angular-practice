@@ -1,25 +1,26 @@
-<div class="container">
-  <hr>
-  <h4>This is number play component</h4>
+<h4>This is number play component</h4>
 
-  <button class="btn btn-secondary mb-3" (click)="isOddsVisible = !isOddsVisible">
-    {{isOddsVisible ? 'show evens' : 'show odds'}}
-  </button>
+<button class="btn btn-info mr-1" (click)="goToServers()">Go to Servers</button>
 
-  <!--<div *ngIfNot="isOddsVisible">-->
-    <!--<p class="even alert alert-primary" *ngFor="let number of evens">{{number}}</p>-->
-  <!--</div>-->
+<button class="btn btn-secondary" (click)="isOddsVisible = !isOddsVisible">
+  {{isOddsVisible ? 'show evens' : 'show odds'}}
+</button>
 
-  <!--<div *ngIfNot="!isOddsVisible">-->
-    <!--<p class="odd alert alert-primary" *ngFor="let number of odds">{{number}}</p>-->
-  <!--</div>-->
+<hr>
 
-  <div [ngSwitch]="isOddsVisible">
-    <div *ngSwitchCase="false">
-      <p class="even alert alert-primary" *ngFor="let number of evens">{{number}}</p>
-    </div>
-    <div *ngSwitchDefault>
-      <p class="odd alert alert-primary" *ngFor="let number of odds">{{number}}</p>
-    </div>
+<!--<div *ngIfNot="isOddsVisible">-->
+<!--<p class="even alert alert-primary" *ngFor="let number of evens">{{number}}</p>-->
+<!--</div>-->
+
+<!--<div *ngIfNot="!isOddsVisible">-->
+<!--<p class="odd alert alert-primary" *ngFor="let number of odds">{{number}}</p>-->
+<!--</div>-->
+
+<div [ngSwitch]="isOddsVisible">
+  <div *ngSwitchCase="false">
+    <p class="even alert alert-primary" *ngFor="let number of evens">{{number}}</p>
+  </div>
+  <div *ngSwitchDefault>
+    <p class="odd alert alert-primary" *ngFor="let number of odds">{{number}}</p>
   </div>
 </div>

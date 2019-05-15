@@ -1,12 +1,16 @@
-<div class="container">
-  <p class="alert" appBetterHighlight
-     elBgColorHighlight="green"
-     [elBgColorDefault]="'blue'">
-    This is servers component
-  </p>
-  <app-add-server (onServerAdded)="addNewServer($event)"></app-add-server>
-  <app-server
-    *ngFor="let el of servers, let i = index"
-    [server]=el
-    (click)="deleteServer(i)"></app-server>
+<div class="my-3">
+  <button class="btn btn-secondary mr-3" (click)="login()">Login</button>
+  <button class="btn btn-secondary" (click)="logout()">Logout</button>
 </div>
+<h4 class="alert" appBetterHighlight
+   elBgColorHighlight="green"
+   [elBgColorDefault]="'blue'">
+  This is servers component
+  <br>
+  See video 137 for before route leave logic
+</h4>
+<app-add-server (onServerAdded)="addNewServer($event)"></app-add-server>
+<app-server
+  *ngFor="let el of servers, let i = index"
+  [server]="el"
+  (click)="deleteServer(i)"></app-server>

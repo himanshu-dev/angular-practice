@@ -1,0 +1,31 @@
+<form (ngSubmit)="submitForm(form)" #form="ngForm" class="col-4">
+  <input type="text"
+         placeholder="UserName"
+         ngModel
+         name="userName"
+         class="form-control"
+         required>
+
+  <input type="email"
+         placeholder="Email"
+         ngModel
+         name="email"
+         email
+         required
+         #email="ngModel"
+         class="form-control mb-0">
+  <span class="help-block mt-0" *ngIf="!email.valid && email.touched">Please enter valid email!</span>
+
+  <select name="city" id="city" ngModel class="form-control">
+    <option value="mathura" selected>Mathura</option>
+    <option value="agra">Agra</option>
+    <option value="delhi">Delhi</option>
+  </select>
+
+  <button type="submit"
+          class="btn btn-secondary"
+          [disabled]="!form.valid">
+    Submit
+  </button>
+
+</form>
