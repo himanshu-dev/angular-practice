@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import * as _ from 'underscore';
 import {CommonService} from '../../service/common.service';
 
@@ -27,7 +27,7 @@ export class AddServerComponent {
 
   addNewServer() {
     this.serverAdded = true;
-    this.onServerAdded.emit(this.server);
+    this.onServerAdded.emit(_.clone(this.server));
     this.commonService.serverCount += 1;
     this.commonService.newServerAdded.emit('hey, i just added new server!');
   }

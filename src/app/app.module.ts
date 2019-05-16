@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {RootComponent} from './component/root/root.component';
@@ -19,8 +20,8 @@ import {AuthService} from './service/auth.service';
 import {AuthGuard} from './service/auth.guard';
 import {MyFormComponent} from './component/my-form/my-form.component';
 import {TodoComponent} from './component/todo/todo.component';
-import { PipePipe } from './pipe.pipe';
 import { ShortenPipe } from './pipe/shorten.pipe';
+import { FilterServersPipe } from './pipe/filter-servers.pipe';
 
 @NgModule({
   declarations: [
@@ -36,13 +37,14 @@ import { ShortenPipe } from './pipe/shorten.pipe';
     NotFoundComponent,
     TodoComponent,
     MyFormComponent,
-    PipePipe,
-    ShortenPipe
+    ShortenPipe,
+    FilterServersPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [LoggingService, CommonService, AuthService, AuthGuard],
   bootstrap: [RootComponent]

@@ -2,6 +2,7 @@
   <button class="btn btn-secondary mr-3" (click)="login()">Login</button>
   <button class="btn btn-secondary" (click)="logout()">Logout</button>
 </div>
+
 <h4 class="alert" appBetterHighlight
    elBgColorHighlight="green"
    [elBgColorDefault]="'blue'">
@@ -9,8 +10,23 @@
   <br>
   See video 137 for before route leave logic
 </h4>
-<app-add-server (onServerAdded)="addNewServer($event)"></app-add-server>
+
+<div class="row">
+  <div class="col-6">
+    <app-add-server
+      (onServerAdded)="addNewServer($event)">
+    </app-add-server>
+  </div>
+  <div class="col-6">
+    <input class="form-control"
+           type="search"
+           placeholder="search by server status"
+           [(ngModel)]="searchString">
+  </div>
+</div>
+
 <app-server
-  *ngFor="let el of servers, let i = index"
+  *ngFor="let el of servers | filterServers:searchString:'name', let i = index;"
   [server]="el"
-  (click)="deleteServer(i)"></app-server>
+  (click)="deleteServer(i)">
+</app-server>

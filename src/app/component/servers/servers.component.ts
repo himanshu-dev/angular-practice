@@ -8,6 +8,7 @@ import {AuthService} from '../../service/auth.service';
 })
 export class ServersComponent {
   servers = [];
+  searchString: any;
 
   constructor(private authService: AuthService) {
   }

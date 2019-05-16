@@ -1,3 +1,26 @@
-<p>
-  todo works!
-</p>
+<div class="row">
+  <div class="col-4">
+    <input type="text"
+           class="form-control"
+           placeholder="task"
+           [(ngModel)]="newTask">
+  </div>
+  <div class="col-8">
+    <button class="btn btn-secondary mr-3"
+            (click)="addTask()">add task
+    </button>
+    <button class="btn btn-secondary mr-3"
+            (click)="saveTasks()">save tasks
+    </button>
+    <button class="btn btn-secondary"
+            (click)="getTasks()">load tasks
+    </button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <p class="col-8 alert alert-primary"
+     *ngFor="let task of taskList">
+    {{task}}
+  </p>
+</div>

@@ -1,7 +1,7 @@
 <div class="alert"
      [ngStyle]="{'background-color': getColor()}"
      [ngClass]="{online: server.status === 'online', offline: server.status === 'offline'}">
-  Server name : {{server.name}} | Status : {{server.status}} |
+  Server name : {{server.name | shorten:15 }} | Status : {{server.status}} |
   <a
     [routerLink]="['/servers', 1, 'edit']"
     [queryParams]="{allowEdit: 1}"
