@@ -27,6 +27,7 @@ import { StockListComponent } from './component/stock-list/stock-list.component'
 import {ProductsComponent} from './component/products/products.component';
 import {AddProductComponent} from './component/add-product/add-product.component';
 import {ShowProductComponent} from './component/show-product/show-product.component';
+import {ProductService} from './service/product.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import {ShowProductComponent} from './component/show-product/show-product.compon
     FormsModule,
     HttpModule
   ],
-  providers: [LoggingService, CommonService, AuthService, AuthGuard],
+  providers: [LoggingService, CommonService, AuthService, AuthGuard, ProductService],
   bootstrap: [ProductsComponent]
 })
 export class AppModule {
