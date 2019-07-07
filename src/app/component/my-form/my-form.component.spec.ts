@@ -1,25 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, TestBed} from '@angular/core/testing';
+import {MyFormComponent} from './my-form.component';
 
-import { MyFormComponent } from './my-form.component';
-
-describe('MyFormComponent', () => {
-  let component: MyFormComponent;
-  let fixture: ComponentFixture<MyFormComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MyFormComponent ]
-    })
-    .compileComponents();
-  }));
-
+describe('My Form Component should pass every test', () => {
   beforeEach(() => {
-    fixture = TestBed.createComponent(MyFormComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      declarations: [MyFormComponent]
+    });
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create my-form component', async () => {
+    const fixture = TestBed.createComponent(MyFormComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
   });
 });

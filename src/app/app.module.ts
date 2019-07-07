@@ -22,6 +22,11 @@ import {MyFormComponent} from './component/my-form/my-form.component';
 import {TodoComponent} from './component/todo/todo.component';
 import { ShortenPipe } from './pipe/shorten.pipe';
 import { FilterServersPipe } from './pipe/filter-servers.pipe';
+import { UserComponent } from './component/user/user.component';
+import { StockListComponent } from './component/stock-list/stock-list.component';
+import {ProductsComponent} from './component/products/products.component';
+import {AddProductComponent} from './component/add-product/add-product.component';
+import {ShowProductComponent} from './component/show-product/show-product.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { FilterServersPipe } from './pipe/filter-servers.pipe';
     TodoComponent,
     MyFormComponent,
     ShortenPipe,
-    FilterServersPipe
+    FilterServersPipe,
+    UserComponent,
+    StockListComponent,
+    ProductsComponent,
+    AddProductComponent,
+    ShowProductComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +57,7 @@ import { FilterServersPipe } from './pipe/filter-servers.pipe';
     HttpModule
   ],
   providers: [LoggingService, CommonService, AuthService, AuthGuard],
-  bootstrap: [RootComponent]
+  bootstrap: [ProductsComponent]
 })
 export class AppModule {
 }

@@ -4,7 +4,11 @@ import {CommonService} from '../../service/common.service';
 @Component({
   selector: 'app-root',
   templateUrl: './root.component.html',
-  styleUrls: ['./root.component.less'],
+  styles: [`
+    h4 {
+      
+    }
+  `],
   providers: [CommonService]
 })
 export class RootComponent {
