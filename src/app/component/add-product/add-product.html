@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h2>this is add product component</h2>
+  <input type="text" class="form-control mt-3" [(ngModel)]="product.name" placeholder="Name">
+  <input type="text" class="form-control mt-3" [(ngModel)]="product.price" placeholder="Price">
+  <button class="btn btn-primary mt-3" (click)="addProduct()">Add Product (Parent)</button>
+  <button class="btn btn-primary mt-3 ml-3" (click)="addProduct2()">Add Product (Subject)</button>
+  <button class="btn btn-primary mt-3 ml-3" (click)="addProduct3()">Add Product (Observable)</button>
+  <button class="btn btn-primary mt-3 ml-3" (click)="clearProducts()">Clear Products</button>
+</div>

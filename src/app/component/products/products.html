@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <app-add-product (onProductAdded)="addProductToArray($event)"></app-add-product>
+  <hr>
+  <h2>Product list</h2>
+  <div *ngFor="let p of products">
+    <app-show-product [product]="p"></app-show-product>
+  </div>
+</div>
